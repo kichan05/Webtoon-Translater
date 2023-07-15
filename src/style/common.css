@@ -1,15 +1,33 @@
-@import url('https://cdn.jsdelivr.net/gh/sunn-us/SUIT/fonts/static/woff2/SUIT.css');
 @import "basic.css";
+
+@font-face {
+    font-family: 'SUIT-Regular';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_suit@1.0/SUIT-Regular.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
 
 * {
     color: #3E3E3E;
-    font-family: 'SUIT', sans-serif;
+    font-family: 'SUIT-Regular', sans-serif;
     word-break: keep-all;
 }
 
 body {
     height: 100vh;
     background: #f6f6f6;
+}
+
+.content-wrap {
+    display: flex;
+    justify-content: center;
+}
+
+.content {
+    width: min(1200px, 100%);
+    margin : 0 auto;
+
+    padding: 12px;
 }
 
 button, .btn {

@@ -1,0 +1,49 @@
+@import "common.css";
+
+.title-wrap {
+    margin-top : 32px;
+}
+
+.title-wrap > * {
+    text-align: center;
+}
+
+.title-wrap h1 {
+    font-size: 32px;
+}
+
+.title-wrap h2 {
+    color: #737373;
+    font-size: 20px;
+}
+
+.webtoon-list {
+    padding: 16px;
+
+    display: flex;
+}
+
+.webtoon-list-item {
+    padding: 20px;
+    border-radius: 20px;
+    background-color: #eeefff;
+
+    cursor: move;
+
+    margin-bottom: 8px;
+    margin-right: 8px;
+
+    display: inline-block;
+}
+
+.webtoon-list-item > .webtoon-img {
+    width: 100px;
+    height: 100px;
+
+    background-size: cover;
+    background-position: center;
+}
+
+.not-draggable {
+    cursor: no-drop;
+}

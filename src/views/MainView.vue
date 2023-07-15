@@ -25,11 +25,17 @@ export default {
     getFile(event) {
       let webtoonFiles = event.target.files
 
+      let result = []
+
       for (let i = 0; i < webtoonFiles.length; i++) {
-        webtoonFiles[i]["preViewUrl"] = URL.createObjectURL(webtoonFiles[i])
+        result.push({
+          id : i,
+          preViewUrl : URL.createObjectURL(webtoonFiles[i]),
+          file : webtoonFiles[i]
+        })
       }
 
-      this.$store.commit("setUploadWebtoonList", webtoonFiles)
+      this.$store.commit("setUploadWebtoonList", result)
       this.$router.push({"name" : "sort"})
     }
   }
