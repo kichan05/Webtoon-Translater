@@ -1,0 +1,29 @@
+@import url('https://cdn.jsdelivr.net/gh/sunn-us/SUIT/fonts/static/woff2/SUIT.css');
+@import "basic.css";
+
+* {
+    color: #3E3E3E;
+    font-family: 'SUIT', sans-serif;
+    word-break: keep-all;
+}
+
+body {
+    height: 100vh;
+    background: #f6f6f6;
+}
+
+button, .btn {
+    color: #f6f6f6;
+    font-size: 20px;
+    font-weight: 600;
+
+    border: none;
+    border-radius: 8px;
+    background-color: #586FE9;
+    padding: 12px 24px;
+}
+
+button:active, .btn:active {
+    scale: 0.95;
+    opacity: 0.9;
+}

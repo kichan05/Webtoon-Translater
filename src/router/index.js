@@ -1,6 +1,6 @@
 import { createRouter, createWebHistory } from "vue-router";
 import MainView from "./../views/MainView";
-import RegisterView from "@/views/RegisterView";
+import SortView from "@/views/SortView";
 
 const routes = [
   {
@@ -9,9 +9,9 @@ const routes = [
     component: MainView,
   },
   {
-    path: "/register",
-    name: "register",
-    component: RegisterView,
+    path: "/sort",
+    name: "sort",
+    component: SortView,
   },
 ];
 

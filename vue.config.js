@@ -1,5 +1,5 @@
 module.exports = {
-  publicPath: '/2023-Sunrin-Hackathon-Front/',
+  publicPath: '/Webtoon-Translate/',
   outputDir: 'dist',
   lintOnSave: false
 }
