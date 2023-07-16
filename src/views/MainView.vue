@@ -24,7 +24,6 @@ export default {
   methods: {
     getFile(event) {
       let webtoonFiles = event.target.files
-
       let result = []
 
       for (let i = 0; i < webtoonFiles.length; i++) {

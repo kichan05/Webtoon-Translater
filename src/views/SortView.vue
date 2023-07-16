@@ -33,6 +33,7 @@
 
 <script>
 import draggable from "vuedraggable";
+import axios from "axios";
 
 export default {
   name: "SortView",
@@ -56,13 +57,23 @@ export default {
     checkMove: function(e) {
       window.console.log("Future index: " + e.draggedContext.futureIndex);
     },
-    submit: function(e) {
-      for (const i of this.webtoonList) {
-        console.log(i.id);
+    next: async function() {
+      const header = { "Content-Type": "multipart/form-data" };
+      const formData = new FormData();
+
+      for (let i = 0; i < this.$store.state.uploadWebtoonList.length; i++) {
+        formData.append("fileList", this.$store.state.uploadWebtoonList[i].file);
       }
-    },
-    next : function() {
-      this.$router.push({"name" : "OcrErrorEdit"})
+
+      const res = await axios.post(
+        "http://127.0.0.1:8000/imageOcr",
+        formData,
+        header
+      ).catch(e => {
+        console.log(e);
+      });
+
+      this.$router.push({ name: "OcrErrorEdit" });
     }
   },
   components: {
