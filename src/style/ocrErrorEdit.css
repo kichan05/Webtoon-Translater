@@ -1,0 +1,34 @@
+@import "common.css";
+
+.content {
+    display : grid;
+}
+
+.title-wrap {
+}
+
+main {
+    height: 700px;
+    display: flex;
+}
+
+.list-wrap {
+    height: 100%;
+    overflow-y: scroll;
+}
+
+.webtoon-list-wrap {
+    width : max(50%, 300px);
+}
+
+.webtoon-list img {
+    width : 100%;
+}
+
+.text-wrap {
+
+}
+
+.text-wrap * {
+    display: inline-block;
+}

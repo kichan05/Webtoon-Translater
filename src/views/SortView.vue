@@ -26,8 +26,7 @@
         </draggable>
       </ul>
 
-      <button @click="submit">확인</button>
-
+      <button @click="next">확인</button>
     </div>
   </div>
 </template>
@@ -61,6 +60,9 @@ export default {
       for (const i of this.webtoonList) {
         console.log(i.id);
       }
+    },
+    next : function() {
+      this.$router.push({"name" : "OcrErrorEdit"})
     }
   },
   components: {
@@ -69,8 +71,4 @@ export default {
 };
 </script>
 
-<style scoped>
-@import "@/style/sort.css";
-
-
-</style>
+<style scoped src="./../style/sort.css"></style>

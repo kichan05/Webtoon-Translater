@@ -25,9 +25,21 @@ body {
 
 .content {
     width: min(1200px, 100%);
-    margin : 0 auto;
 
     padding: 12px;
+}
+
+.title-wrap > * {
+    text-align: center;
+}
+
+.title-wrap h1 {
+    font-size: 32px;
+}
+
+.title-wrap h2 {
+    color: #737373;
+    font-size: 20px;
 }
 
 button, .btn {

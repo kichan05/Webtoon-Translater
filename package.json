@@ -13,9 +13,11 @@
   },
   "dependencies": {
     "@babel/polyfill": "^7.12.1",
+    "axios": "^1.4.0",
     "firebase": "^9.22.1",
     "moment": "^2.29.4",
     "vue": "^3.2.13",
+    "vue-axios": "^3.5.2",
     "vue-router": "^4.0.3",
     "vuedraggable": "^4.1.0",
     "vuex": "^4.0.0"

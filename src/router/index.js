@@ -1,6 +1,7 @@
 import { createRouter, createWebHistory } from "vue-router";
 import MainView from "./../views/MainView";
 import SortView from "@/views/SortView";
+import OcrErrorEdit from "@/views/OcrErrorEdit";
 
 const routes = [
   {
@@ -12,6 +13,11 @@ const routes = [
     path: "/sort",
     name: "sort",
     component: SortView,
+  },
+  {
+    path: "/edit",
+    name: "OcrErrorEdit",
+    component: OcrErrorEdit,
   },
 ];
 
