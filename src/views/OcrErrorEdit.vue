@@ -9,7 +9,8 @@
       <main>
         <div class="webtoon-list-wrap list-wrap">
           <div class="webtoon-list">
-            <img v-for="(i, n) in webtoonList" :src="i.preViewUrl" :key="n">
+            <img :src="$apiUrl +  '/image/' + timeStamp + '.png'" />
+<!--            <img v-for="(i, n) in webtoonList" :src="i.preViewUrl" :key="n">-->
           </div>
         </div>
         <div class="text-list-wrap list-wrap">
@@ -37,7 +38,7 @@ export default {
   },
   methods : {
     next(){
-
+      console.log(this.timeStamp);
     }
   },
   computed: {
@@ -55,6 +56,11 @@ export default {
       },
       set(value) {
         this.$store.commit("setOcrResult", value);
+      }
+    },
+    timeStamp : {
+      get() {
+        return this.$store.state.ocrTimeStamp
       }
     }
   }

@@ -59,3 +59,22 @@ button:active, .btn:active {
     scale: 0.95;
     opacity: 0.9;
 }
+
+input {
+    width: 100%;
+    font-size: 24px;
+
+    padding: 8px;
+    margin-bottom: 12px;
+    border-radius: 4px;
+
+    box-shadow: #e1e1e1 0 0 0 1px;
+
+    display: inline-block;
+
+    outline: none;
+}
+
+input:focus {
+    box-shadow: #7086ff 0 0 0 1.5px;
+}

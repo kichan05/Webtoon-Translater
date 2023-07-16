@@ -73,7 +73,7 @@ export default {
 
       this.uploading = true;
       const res = await axios.post(
-        "http://127.0.0.1:8000/imageOcr",
+        `${this.$apiUrl}/imageOcr`,
         formData,
         header
       ).then(res => {
@@ -81,6 +81,7 @@ export default {
 
         this.uploading = false;
         this.$store.commit("setOcrResult", res.data.ocr);
+        this.$store.commit("setOcrTimeStamp", res.data.timeStamp);
         this.$router.push({ name: "OcrErrorEdit" });
       })
         .catch(e => {

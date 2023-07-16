@@ -30,16 +30,3 @@ main {
 
     padding: 12px;
 }
-
-.text-list input {
-    width: 100%;
-    font-size: 24px;
-
-    padding: 8px;
-    margin-bottom: 12px;
-    border-radius: 4px;
-
-    box-shadow: #e1e1e1 0px 0px 0px 1px;
-
-    display: inline-block;
-}
