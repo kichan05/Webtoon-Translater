@@ -9,7 +9,7 @@
       <main>
         <div class="webtoon-list-wrap list-wrap">
           <div class="webtoon-list">
-            <img :src="$apiUrl +  '/image/' + timeStamp + '.png'" />
+            <img :src="`${$apiUrl}/ocr/${timeStamp}.png`" />
           </div>
         </div>
         <div class="text-list-wrap list-wrap">

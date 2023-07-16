@@ -8,7 +8,12 @@
 
       <main>
         <div class="img-wrap">
-          <img :src="`${$apiUrl}/translate/2023-07-16 23.16.22.png`" />
+          <h3>원본</h3>
+          <img :src="`${$apiUrl}/image/${timeStamp}.png`" />
+        </div>
+        <div class="img-wrap">
+          <h3>번역</h3>
+          <img :src="`${$apiUrl}/translate/${timeStamp}.png`" />
         </div>
 <!--        <div class="button-wrap">-->
 <!--          <button class="download">저장</button>-->
@@ -55,10 +60,21 @@ main > * {
   display: inline-block;
 }
 
-img {
-  width: 100%;
+.img-wrap {
+  padding: 8px;
 }
 
-.download {
+.img-wrap h3 {
+  font-size: 24px;
+  text-align: center;
+}
+
+.img-wrap img {
+  width: 100%;
+
+  margin-top: 12px;
+
+  border: 1px solid #c2c2c2;
+  border-radius: 12px;
 }
 </style>

@@ -34,7 +34,6 @@ export default {
         })
       }
 
-      // result.sort((a, b) => a.file.name.localeCompare(b.file.name));
       this.$store.commit("setUploadWebtoonList", result)
       this.$router.push({"name" : "sort"})
     }

@@ -78,14 +78,13 @@ export default {
         formData,
         header
       ).then(res => {
-        console.log(res.data);
-
         this.uploading = false;
         this.$store.commit("setOcrResult", res.data.ocr);
         this.$store.commit("setOcrTimeStamp", res.data.timeStamp);
         this.$router.push({ name: "OcrErrorEdit" });
       })
         .catch(e => {
+          this.uploading = false;
           alert("에러 유감 ㅠ")
           console.log(e);
         });
