@@ -10,7 +10,6 @@
         <div class="webtoon-list-wrap list-wrap">
           <div class="webtoon-list">
             <img :src="$apiUrl +  '/image/' + timeStamp + '.png'" />
-            <!--            <img v-for="(i, n) in webtoonList" :src="i.preViewUrl" :key="n">-->
           </div>
         </div>
         <div class="text-list-wrap list-wrap">
@@ -52,6 +51,8 @@ export default {
       }).then(res => {
         this.loading = false;
         console.log(res.data);
+
+        this.$router.push({name : "ResultView"})
       })
         .catch(e => {
           this.loading = false;

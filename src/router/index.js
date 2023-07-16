@@ -2,6 +2,7 @@ import { createRouter, createWebHistory } from "vue-router";
 import MainView from "./../views/MainView";
 import SortView from "@/views/SortView";
 import OcrErrorEdit from "@/views/OcrErrorEdit";
+import Result from "@/views/Result";
 
 const routes = [
   {
@@ -18,6 +19,11 @@ const routes = [
     path: "/edit",
     name: "OcrErrorEdit",
     component: OcrErrorEdit,
+  },
+  {
+    path: "/result",
+    name: "ResultView",
+    component: Result,
   },
 ];
 
