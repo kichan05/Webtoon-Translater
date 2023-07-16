@@ -26,6 +26,8 @@
 </template>
 
 <script>
+import axios from "axios";
+
 export default {
   name: "OcrErrorEdit",
   data() {
@@ -37,8 +39,13 @@ export default {
     console.log(this.ocrResult);
   },
   methods : {
-    next(){
-      console.log(this.timeStamp);
+    async next() {
+      const res = await axios.post(this.$apiUrl + "/translate", {
+        "time_stamp": this.timeStamp,
+        "ocr": this.ocrResult,
+      })
+
+      console.log(res.data);
     }
   },
   computed: {
