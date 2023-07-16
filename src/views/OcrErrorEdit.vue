@@ -12,13 +12,14 @@
             <img v-for="(i, n) in webtoonList" :src="i.preViewUrl" :key="n">
           </div>
         </div>
-
         <div class="text-list-wrap list-wrap">
           <div class="text-list">
-            <h1 v-for="i in 1000" :key="i">Hello World</h1>
+            <input v-for="(i, n) in ocrResult" :key="n" v-model="i.text" :placeholder="i.text"/>
           </div>
         </div>
       </main>
+
+      <button @click="next">확인</button>
     </div>
   </div>
 </template>
@@ -28,8 +29,16 @@ export default {
   name: "OcrErrorEdit",
   data() {
     return {
-      text: ["안녕하세요.", "안녕하세요.", "안녕하세요.", "안녕하세요."]
+      // newText : []
     };
+  },
+  mounted() {
+    console.log(this.ocrResult);
+  },
+  methods : {
+    next(){
+
+    }
   },
   computed: {
     webtoonList: {
@@ -38,6 +47,14 @@ export default {
       },
       set(value) {
         this.$store.commit("setUploadWebtoonList", value);
+      }
+    },
+    ocrResult: {
+      get() {
+        return this.$store.state.ocrResult;
+      },
+      set(value) {
+        this.$store.commit("setOcrResult", value);
       }
     }
   }

@@ -29,18 +29,21 @@
       <button @click="next">확인</button>
     </div>
   </div>
+  <LoadingModal v-if="uploading" title="업로드 중" />
 </template>
 
 <script>
 import draggable from "vuedraggable";
 import axios from "axios";
+import LoadingModal from "@/views/LoadingModal";
 
 export default {
   name: "SortView",
   data() {
     return {
       enabled: true,
-      dragging: false
+      dragging: false,
+      uploading: false
     };
   },
   computed: {
@@ -52,6 +55,9 @@ export default {
         this.$store.commit("setUploadWebtoonList", value);
       }
     }
+  },
+  mounted() {
+    console.log(this.webtoonList);
   },
   methods: {
     checkMove: function(e) {
@@ -65,18 +71,25 @@ export default {
         formData.append("fileList", this.$store.state.uploadWebtoonList[i].file);
       }
 
+      this.uploading = true;
       const res = await axios.post(
         "http://127.0.0.1:8000/imageOcr",
         formData,
         header
-      ).catch(e => {
-        console.log(e);
-      });
+      ).then(res => {
+        console.log(res.data);
 
-      this.$router.push({ name: "OcrErrorEdit" });
+        this.uploading = false;
+        this.$store.commit("setOcrResult", res.data.ocr);
+        this.$router.push({ name: "OcrErrorEdit" });
+      })
+        .catch(e => {
+          console.log(e);
+        });
     }
   },
   components: {
+    LoadingModal,
     draggable
   }
 };

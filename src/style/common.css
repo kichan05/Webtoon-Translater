@@ -24,7 +24,7 @@ body {
 }
 
 .content {
-    width: min(1200px, 100%);
+    width: min(1000px, 100%);
 
     padding: 12px;
 }
@@ -51,6 +51,8 @@ button, .btn {
     border-radius: 8px;
     background-color: #586FE9;
     padding: 12px 24px;
+
+    cursor: pointer;
 }
 
 button:active, .btn:active {

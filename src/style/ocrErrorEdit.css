@@ -1,14 +1,14 @@
 @import "common.css";
 
-.content {
-    display : grid;
-}
-
-.title-wrap {
-}
-
 main {
+    width: max(100%, 500px);
     height: 700px;
+
+    border-radius: 8px;
+    overflow: hidden;
+
+    margin-top: 32px;
+
     display: flex;
 }
 
@@ -18,17 +18,28 @@ main {
 }
 
 .webtoon-list-wrap {
-    width : max(50%, 300px);
+    width : 50%;
 }
 
 .webtoon-list img {
     width : 100%;
 }
 
-.text-wrap {
+.text-list-wrap {
+    width : 50%;
 
+    padding: 12px;
 }
 
-.text-wrap * {
+.text-list input {
+    width: 100%;
+    font-size: 24px;
+
+    padding: 8px;
+    margin-bottom: 12px;
+    border-radius: 4px;
+
+    box-shadow: #e1e1e1 0px 0px 0px 1px;
+
     display: inline-block;
 }

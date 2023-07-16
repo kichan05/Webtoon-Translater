@@ -1,22 +1,5 @@
 @import "common.css";
 
-.title-wrap {
-    margin-top : 32px;
-}
-
-.title-wrap > * {
-    text-align: center;
-}
-
-.title-wrap h1 {
-    font-size: 32px;
-}
-
-.title-wrap h2 {
-    color: #737373;
-    font-size: 20px;
-}
-
 .webtoon-list {
     padding: 16px;
 
