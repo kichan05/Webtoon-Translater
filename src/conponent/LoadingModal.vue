@@ -18,4 +18,4 @@ export default {
 };
 </script>
 
-<style scoped src="./../style/loading_modal.css"></style>
+<style scoped src="../style/loading_modal.css"></style>

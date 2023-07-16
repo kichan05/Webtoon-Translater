@@ -10,12 +10,12 @@
         <div class="webtoon-list-wrap list-wrap">
           <div class="webtoon-list">
             <img :src="$apiUrl +  '/image/' + timeStamp + '.png'" />
-<!--            <img v-for="(i, n) in webtoonList" :src="i.preViewUrl" :key="n">-->
+            <!--            <img v-for="(i, n) in webtoonList" :src="i.preViewUrl" :key="n">-->
           </div>
         </div>
         <div class="text-list-wrap list-wrap">
           <div class="text-list">
-            <input v-for="(i, n) in ocrResult" :key="n" v-model="i.text" :placeholder="i.text"/>
+            <input v-for="(i, n) in ocrResult" :key="n" v-model="i.text" :placeholder="i.text" />
           </div>
         </div>
       </main>
@@ -23,29 +23,41 @@
       <button @click="next">확인</button>
     </div>
   </div>
+  <LoadingModal v-if="loading" title="업로드 중" />
 </template>
 
 <script>
 import axios from "axios";
+import LoadingModal from "@/conponent/LoadingModal";
 
 export default {
   name: "OcrErrorEdit",
   data() {
     return {
-      // newText : []
+      loading: false
     };
   },
   mounted() {
     console.log(this.ocrResult);
   },
-  methods : {
+  methods: {
     async next() {
-      const res = await axios.post(this.$apiUrl + "/translate", {
-        "time_stamp": this.timeStamp,
-        "ocr": this.ocrResult,
-      })
+      this.loading = true;
 
-      console.log(res.data);
+      console.log(this.ocrResult);
+
+      await axios.post(this.$apiUrl + "/translate", {
+        "time_stamp": this.timeStamp,
+        "ocr": this.ocrResult
+      }).then(res => {
+        this.loading = false;
+        console.log(res.data);
+      })
+        .catch(e => {
+          this.loading = false;
+          alert("에러 유감ㅠ");
+        });
+
     }
   },
   computed: {
@@ -65,11 +77,14 @@ export default {
         this.$store.commit("setOcrResult", value);
       }
     },
-    timeStamp : {
+    timeStamp: {
       get() {
-        return this.$store.state.ocrTimeStamp
+        return this.$store.state.ocrTimeStamp;
       }
     }
+  },
+  components: {
+    LoadingModal
   }
 };
 </script>

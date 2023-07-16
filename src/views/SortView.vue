@@ -21,6 +21,7 @@
           <template #item="{ element }">
             <li class="webtoon-list-item" :class="{ 'not-draggable': !enabled }">
               <div class="webtoon-img" v-bind:style="{backgroundImage : `url(${element.preViewUrl})`}" />
+              <h3>{{ element.file.name }}</h3>
             </li>
           </template>
         </draggable>
@@ -35,7 +36,7 @@
 <script>
 import draggable from "vuedraggable";
 import axios from "axios";
-import LoadingModal from "@/views/LoadingModal";
+import LoadingModal from "@/conponent/LoadingModal";
 
 export default {
   name: "SortView",
@@ -85,6 +86,7 @@ export default {
         this.$router.push({ name: "OcrErrorEdit" });
       })
         .catch(e => {
+          alert("에러 유감 ㅠ")
           console.log(e);
         });
     }

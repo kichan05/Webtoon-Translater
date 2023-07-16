@@ -23,7 +23,7 @@ export default {
   },
   methods: {
     getFile(event) {
-      let webtoonFiles = event.target.files
+      let webtoonFiles = Array.from(event.target.files)
       let result = []
 
       for (let i = 0; i < webtoonFiles.length; i++) {
@@ -34,6 +34,7 @@ export default {
         })
       }
 
+      // result.sort((a, b) => a.file.name.localeCompare(b.file.name));
       this.$store.commit("setUploadWebtoonList", result)
       this.$router.push({"name" : "sort"})
     }
